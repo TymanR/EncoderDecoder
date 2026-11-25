@@ -7,10 +7,19 @@ class Backend:
     
 
     def Encrypt(textToEncrypt):
-     arrayNew = []
-     arrayNew = Backend.DivideIntoArray(textToEncrypt)     
+     arrayChars = []
+     arrayChars = Backend.DivideIntoArray(textToEncrypt)     
+     for char in arrayChars:
+        if char == 
+     
+     return arrayChars
 
-     return arrayNew
+
+    def TransformToDecimal(char):
+          x = 0
+          
+        
+          return x
 
 
 

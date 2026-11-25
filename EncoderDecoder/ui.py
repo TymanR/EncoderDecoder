@@ -18,4 +18,4 @@ elif Task == "2":
     print(arrayToPrint)
     
 
-print("scs")
+print("script ended")
