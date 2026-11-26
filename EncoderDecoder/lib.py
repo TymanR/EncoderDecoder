@@ -36,11 +36,10 @@ class Backend:
        DictionaryTemp = {}
        with open(ExcelName, "r") as f1:
         for line in f1:
-         lines = line.strip().split('=')
+         lines = line.split('=')
          DictionaryTemp[lines[0]] = lines[1]
 
        Backend.Dictionary = DictionaryTemp 
         
        
-
-
+    
