@@ -1,19 +1,16 @@
 class Backend:
+
+    ExcelFileName = "EncodingValues.csv"
+
+
     def Decrypt(textToDecrypt):
           
-        
+        Backend.ReadExcelFile(Backend.ExcelFileName)
 
         return 0
     
 
-    def Encrypt(textToEncrypt):
-     arrayChars = []
-     arrayChars = Backend.DivideIntoArray(textToEncrypt)     
-     for char in arrayChars:
-        if char == 
-     
-     return arrayChars
-
+ 
 
     def TransformToDecimal(char):
           x = 0
@@ -30,6 +27,14 @@ class Backend:
         return array
 
 
+    def ReadExcelFile(ExcelName):
+       Dictionary = {}
+       with open(ExcelName, "r") as f1:
+        for line in f1:
+         lines = line.split('=')
+         Dictionary[lines[0]] = lines[1]
+         print(Dictionary["A"])
+
 
 
 """  
@@ -42,5 +47,15 @@ my_array.pop()           # Remove last element
 
 print(len(my_array))     # Get number of elements
 print(my_array[0])       # Access first element
+
+
+
+   def Encrypt(textToEncrypt):
+     arrayChars = []
+     arrayChars = Backend.DivideIntoArray(textToEncrypt)     
+     for char in arrayChars:
+        if char == 
+     
+     return arrayChars
 
 """

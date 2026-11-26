@@ -4,10 +4,15 @@
 4. if chr == 
 
 
-Hello World
 
 
-2 lists one where chr on left side and dec on other like
+
+ one list  where chr on left side and dec on other like
 
 
-A = 65 
+A=65 
+
+to be careful not to paste any spaces A = 65 will be false.
+
+For future
+can just use like in javascript trim()
