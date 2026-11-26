@@ -1,31 +1,28 @@
 class Backend:
 
     ExcelFileName = "EncodingValues.csv"
-
+    Dictionary = {}
 
     def Decrypt(textToDecrypt):
            arrayChars = []
            arrayChars = Backend.DivideIntoArray(textToDecrypt)     
-           for char in arrayChars:
-             if char == 
-          
-           return arrayChars    
            
     
-        
-    
-
+    # need to fix when char doesnt exist in excel ,that program just skipps this char
     def Encrypt(textToEncrypt):
+      parts = []
       Backend.ReadExcelFile(Backend.ExcelFileName)
-     
+      chars = textToEncrypt.split()
+      for char in chars:
+        value = Backend.Dictionary.get(char)
 
-    def TransformToDecimal(char):
-          x = 0
-          
-        
-          return x
+        if value is not None:
+          parts.append(value)
+      return parts
+    
+              
 
-
+ 
 
     def DivideIntoArray(textToDivide):
         array = []
@@ -35,27 +32,14 @@ class Backend:
 
 
     def ReadExcelFile(ExcelName):
-       Dictionary = {}
+       DictionaryTemp = {}
        with open(ExcelName, "r") as f1:
         for line in f1:
-         lines = line.split('=')
-         Dictionary[lines[0]] = lines[1]
-         print(Dictionary["A"])
+         lines = line.strip().split('=')
+         DictionaryTemp[lines[0]] = lines[1]
+
+       Backend.Dictionary = DictionaryTemp 
+        
+       
 
 
-
-"""  
-  my_array = []
-
-my_array.append(10)       # Add element
-my_array.insert(0, 5)    # Insert at index 0
-my_array.remove(10)      # Remove element by value
-my_array.pop()           # Remove last element
-
-print(len(my_array))     # Get number of elements
-print(my_array[0])       # Access first element
-
-
-
-
-"""

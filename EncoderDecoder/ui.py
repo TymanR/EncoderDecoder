@@ -15,7 +15,8 @@ elif Task == "2":
     text = input()
     arrayToPrint = []
     arrayToPrint = Backend.Encrypt(text)
-    print(arrayToPrint)
+    for text in arrayToPrint:
+        print(text)
     
 
 print("script ended")
