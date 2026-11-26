@@ -8,7 +8,9 @@ Task  =  input()
 if Task == "1":
     print("Write text u want to decrypt")
     text = input()
-    print(Backend.Decrypt(text))
+   
+    arrayToPrint =  Backend.Decrypt(text)
+    print("".join(str(value) for value in arrayToPrint))
 
 elif Task == "2":
     print("Write text u want to encrypt")

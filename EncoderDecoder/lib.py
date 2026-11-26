@@ -2,11 +2,20 @@ class Backend:
 
     ExcelFileName = "EncodingValues.csv"
     Dictionary = {}
+    ValueToChar = {}
+
 
     def Decrypt(textToDecrypt):
-           arrayChars = []
-           arrayChars = Backend.DivideIntoArray(textToDecrypt)     
-           
+           Backend.ReadExcelFile(Backend.ExcelFileName)
+           originalText = []
+           arrayNumbers = []
+           arrayNumbers = Backend.DivideIntoArray(textToDecrypt)
+           for numbers in arrayNumbers:
+            char = Backend.ValueToChar.get(numbers)
+            if char is not None:
+             originalText.append(char)
+
+           return originalText
     
     def Encrypt(textToEncrypt):
       parts = []
@@ -23,13 +32,7 @@ class Backend:
     
               
 
- 
 
-    def DivideIntoArray(textToDivide):
-        array = []
-        for char in textToDivide:
-            array.append(char)
-        return array
 
 
     def ReadExcelFile(ExcelName):
@@ -44,6 +47,16 @@ class Backend:
 
         
        Backend.Dictionary = DictionaryTemp 
-        
+       Backend.ValueToChar = {v: k for k, v in DictionaryTemp.items()}
+
        
     
+ 
+
+    def DivideIntoArray(textToDivide):
+        array = []
+        line = textToDivide.split()
+        for numbers in line:
+           array.append(numbers)
+            
+        return array
