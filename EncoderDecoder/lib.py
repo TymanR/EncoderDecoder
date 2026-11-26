@@ -4,13 +4,20 @@ class Backend:
 
 
     def Decrypt(textToDecrypt):
+           arrayChars = []
+           arrayChars = Backend.DivideIntoArray(textToDecrypt)     
+           for char in arrayChars:
+             if char == 
           
-        Backend.ReadExcelFile(Backend.ExcelFileName)
-
-        return 0
+           return arrayChars    
+           
+    
+        
     
 
- 
+    def Encrypt(textToEncrypt):
+      Backend.ReadExcelFile(Backend.ExcelFileName)
+     
 
     def TransformToDecimal(char):
           x = 0
@@ -50,12 +57,5 @@ print(my_array[0])       # Access first element
 
 
 
-   def Encrypt(textToEncrypt):
-     arrayChars = []
-     arrayChars = Backend.DivideIntoArray(textToEncrypt)     
-     for char in arrayChars:
-        if char == 
-     
-     return arrayChars
 
 """
