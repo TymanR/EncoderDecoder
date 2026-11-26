@@ -37,8 +37,12 @@ class Backend:
        with open(ExcelName, "r") as f1:
         for line in f1:
          lines = line.strip().split('=')
-         DictionaryTemp[lines[0]] = lines[1]
+         key = lines[0]
+         if key == "SPACE":
+            key = " "
+         DictionaryTemp[key] = lines[1]
 
+        
        Backend.Dictionary = DictionaryTemp 
         
        
